@@ -728,6 +728,9 @@ namespace Lab10
 #แบบฝึกหัด
 ให้วาดรูปวิว โดยใช้รูปร่างต่างๆ ที่ทำการทดลองใน Lab นี้
 
+
+
+![](https://github.com/NAPHARAT/LAB-10/blob/master/imgs/12.JPG)
 ##เอกสารอ้างอิง
 ### [Graphics Methods](https://msdn.microsoft.com/en-us/library/system.drawing.graphics_methods(v=vs.110).aspx)
 ### [System.Drawing Namespace](https://msdn.microsoft.com/en-us/library/system.drawing(v=vs.110).aspx)
