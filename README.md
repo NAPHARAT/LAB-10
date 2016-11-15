@@ -462,6 +462,48 @@ namespace Lab10
 <img src= "https://github.com/Desktop-Programming-Lab-2559/LAB-10/blob/master/imgs/lab10-7.png">
 </p> 
 
+Code
+```
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+namespace Lab10
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            Pen curPen = new Pen(Color.Blue, 3);
+            Rectangle[] rect = {    new Rectangle (20,20,120,20),
+                                    new Rectangle (20,50,120,30),
+                                    new Rectangle (20,90,120,40),
+                                    new Rectangle (20,140,120,60),
+            };
+           
+        }
+
+
+        }
+    }
+
+```
+
+
+ผลการทดลอง
+
+![](https://github.com/NAPHARAT/LAB-10/blob/master/imgs/7.JPG)
 
 ## การวาดวงกลมและวงรี
 วงรีต่างจากวงกลมตรงที่เส้นผ่านศูนย์กลางในแกนตั้งและแกนนอนจะไม่เท่ากัน ในภาษาโปรแกรมส่วนใหญ่จะมีเฉพาะฟังก์ชันวาดวงรี ถ้าต้องการวาดวงกลม ให้กำหนดเส้นผ่านศูนย์กลางในแกนตั้งและแกนนอนให้เท่ากัน
@@ -469,20 +511,220 @@ namespace Lab10
 <img src= "https://github.com/Desktop-Programming-Lab-2559/LAB-10/blob/master/imgs/lab10-8.png">
 </p> 
 
+
+Code
+
+```
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+namespace Lab10
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            Rectangle rect = new Rectangle(10, 10, 120, 100);
+            e.Graphics.DrawEllipse(Pens.Cyan, rect);
+
+            Rectangle rect1 = new Rectangle(10, 120, 100, 100);
+            e.Graphics.FillEllipse(Brushes.DeepPink, rect1);
+
+            Rectangle rect2 = new Rectangle(150, 10, 120, 100);
+            e.Graphics.DrawEllipse (Pens .DarkSlateBlue, rect2);
+
+            Rectangle rect3 = new Rectangle(120, 120, 100, 100);
+            e.Graphics.FillEllipse(Brushes.Firebrick , rect3);
+
+        }
+        }
+    }
+
+
+
+```
+
+
+ผลการทดลอง
+
+![](https://github.com/NAPHARAT/LAB-10/blob/master/imgs/8.JPG)
 ## การวาดส่วนโค้ง (Arc)
    <p align="center">
 <img src= "https://github.com/Desktop-Programming-Lab-2559/LAB-10/blob/master/imgs/lab10-9.png">
 </p> 
+
+
+Code
+
+```
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+namespace Lab10
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            Pen penEllipse = new Pen(Color.Brown);
+            penEllipse.DashStyle = DashStyle.Dash;
+            e.Graphics.DrawEllipse(penEllipse, 20, 20, 200, 150);
+            Pen penArc = new Pen(Color.Magenta, 2);
+            e.Graphics.DrawArc(penArc, 20, 20, 200, 150, 45, 180);
+            
+        
+        }
+
+
+
+      
+    }
+    }
+
+
+
+```
+
+
+ผลการทดลอง
+
+![](https://github.com/NAPHARAT/LAB-10/blob/master/imgs/9.JPG)
 ## การวาดรูป Pie
   <p align="center">
 <img src= "https://github.com/Desktop-Programming-Lab-2559/LAB-10/blob/master/imgs/lab10-10.png">
 </p>  
+
+
+Code
+```
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+namespace Lab10
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            Pen penEllipse = new Pen(Color.Brown);
+            penEllipse.DashStyle = DashStyle.Dash;
+            e.Graphics.DrawEllipse(penEllipse, 20, 20, 200, 150);
+
+            Pen penPie = new Pen(Color.Magenta, 2);
+            e.Graphics.DrawPie(penPie, 20, 20, 200, 150, 45, 90);
+            Pen penPie1 = new Pen(Color.BlueViolet, 2);
+            e.Graphics.DrawPie(penPie1, 20, 20, 200, 150, 135, 45);
+
+
+            
+        }
+    }
+    }
+
+
+
+
+
+```
+
+
+ผลการทดลอง
+
+
+![](https://github.com/NAPHARAT/LAB-10/blob/master/imgs/10.JPG)
 
 ## การสร้าง graphics path จากรูปต่างๆ 
   <p align="center">
 <img src= "https://github.com/Desktop-Programming-Lab-2559/LAB-10/blob/master/imgs/lab10-11.png">
 </p>  
 
+
+Code
+
+```
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing.Drawing2D;
+namespace Lab10
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Paint(object sender, PaintEventArgs e)
+        {
+            GraphicsPath gpath = new GraphicsPath();
+            gpath.AddEllipse(46, 4, 28, 28);
+            gpath.AddLine(36, 32, 84, 32);
+            gpath.AddLine(100, 80, 88, 84);
+            gpath.AddLine(76, 50, 74, 84);
+            gpath.AddLine(90, 150, 74, 150);
+            gpath.AddLine(60, 100, 46, 150);
+            gpath.AddLine(32, 150,46, 84);
+            gpath.AddLine(44, 50, 32, 84);
+            gpath.AddLine(20, 80, 36, 32);
+
+            e.Graphics.FillPath(Brushes.Blue, gpath);
+
+        }
+      
+    }
+    }
+
+
+
+```
+
+
+ผลการทดลอง
+
+![](https://github.com/NAPHARAT/LAB-10/blob/master/imgs/11.JPG)
 #แบบฝึกหัด
 ให้วาดรูปวิว โดยใช้รูปร่างต่างๆ ที่ทำการทดลองใน Lab นี้
 
